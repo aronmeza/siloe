@@ -17,7 +17,7 @@ class SeguroControllerIntegrationTests {
     }
 
     @Test
-    void testSomething() {
+    void testGuardarSeguro() {
 	def controller = new SeguroController()
 
 	controller.params.nombre = 'TEST'
@@ -28,6 +28,18 @@ class SeguroControllerIntegrationTests {
 	assert seguro
 	
     }
+
+	@Test
+	void testEditarSeguro(){
+	def controller = new SeguroController()
+	controller.params.nombre = 'TEST'
+	
+	controller.save()
+	
+	//TODO editar
+	
+	
+	}
 	
 	
 }
