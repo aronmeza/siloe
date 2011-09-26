@@ -18,6 +18,7 @@ class SeguroControllerIntegrationTests {
 
     @Test
     void testSomething() {
+//save
 	def controller = new SeguroController()
 
 	controller.params.nombre = 'TEST'
@@ -26,7 +27,21 @@ class SeguroControllerIntegrationTests {
 	
 	def seguro = Seguro.findByNombre('TEST')
 	assert seguro
+//edit
+	controller.params.id = seguro.id
+	controller.params.nombre = 'TEST MOD'
+	controller.save()
+
+	assert Seguro.find(seguro.id).nombre == 'TEST MOD'
 	
+//delete
+	controller.params.id = seguro.id
+	controller.delete()
+	
+	assert null == Seguro.findByNombre('TEST MOD')
+
+	
+		
     }
 	
 	
