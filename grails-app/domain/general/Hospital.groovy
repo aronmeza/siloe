@@ -7,8 +7,8 @@ class Hospital {
     String telefono
     Set almacenes
 
+//    static hashMany = [almacenes: Almacen, contratos: Contrato]
     static hashMany = [almacenes: Almacen]
-    
     static constraints = {
         nombre blank: false, maxSize: 128
         direccion blank: false

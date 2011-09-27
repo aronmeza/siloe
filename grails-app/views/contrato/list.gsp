@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="folio" title="${message(code: 'contrato.folio.label', default: 'Folio')}" />
 					
+						<th><g:message code="contrato.hospital.label" default="Hospital" /></th>
+					
 						<th><g:message code="contrato.seguro.label" default="Seguro" /></th>
 					
 					</tr>
@@ -35,6 +37,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${contratoInstance.id}">${fieldValue(bean: contratoInstance, field: "folio")}</g:link></td>
+					
+						<td>${fieldValue(bean: contratoInstance, field: "hospital")}</td>
 					
 						<td>${fieldValue(bean: contratoInstance, field: "seguro")}</td>
 					

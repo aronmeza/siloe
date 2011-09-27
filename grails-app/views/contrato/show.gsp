@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${contratoInstance?.hospital}">
+				<li class="fieldcontain">
+					<span id="hospital-label" class="property-label"><g:message code="contrato.hospital.label" default="Hospital" /></span>
+					
+						<span class="property-value" aria-labelledby="hospital-label"><g:link controller="hospital" action="show" id="${contratoInstance?.hospital?.id}">${contratoInstance?.hospital?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${contratoInstance?.seguro}">
 				<li class="fieldcontain">
 					<span id="seguro-label" class="property-label"><g:message code="contrato.seguro.label" default="Seguro" /></span>
