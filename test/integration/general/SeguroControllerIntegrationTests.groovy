@@ -26,20 +26,21 @@ class SeguroControllerIntegrationTests {
 	
 	def seguro = Seguro.findByNombre('TEST')
 	assert seguro
-	
-    }
-
-	@Test
-	void testEditarSeguro(){
-	def controller = new SeguroController()
-	controller.params.nombre = 'TEST'
-	
+//edit
+	controller.params.id = seguro.id
+	controller.params.nombre = 'TEST MOD'
 	controller.save()
+
+	assert Seguro.find(seguro.id).nombre == 'TEST MOD'
 	
-	//TODO editar
+//delete
+	controller.params.id = seguro.id
+	controller.delete()
 	
+	assert null == Seguro.findByNombre('TEST MOD')
+
 	
-	}
-	
+		
+    }
 	
 }
